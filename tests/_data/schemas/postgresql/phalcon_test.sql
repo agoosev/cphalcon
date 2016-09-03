@@ -208,6 +208,11 @@ CREATE TABLE robots_parts (
     parts_id integer NOT NULL
 );
 
+CREATE TABLE describe_time (
+    id integer NOT NULL,
+    time_field TIME
+);
+
 
 ALTER TABLE public.robots_parts OWNER TO postgres;
 

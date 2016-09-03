@@ -549,6 +549,13 @@ CREATE TABLE `issue12071_body` (
   CONSTRAINT `issue12071_body_head_2_fkey` FOREIGN KEY (`head_2_id`) REFERENCES `issue12071_head` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `describe_time`;
+CREATE TABLE `describe_time` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `time_field` TIME,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

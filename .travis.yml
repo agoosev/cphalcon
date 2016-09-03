@@ -89,12 +89,12 @@ script:
 after_failure:
   - bash tests/_ci/after_failure.sh
 
-notifications:
-  email:
-    - andres@phalconphp.com
-    - eduar@phalconphp.com
-    - nikos@phalconphp.com
-    - serghei@phalconphp.com
+# notifications:
+#   email:
+#     - andres@phalconphp.com
+#     - eduar@phalconphp.com
+#     - nikos@phalconphp.com
+#     - serghei@phalconphp.com
 
 addons:
   apt:
