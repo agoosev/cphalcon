@@ -683,9 +683,7 @@ class DbDescribeTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($describeReferences, $expectedReferences);
 
 		$describeTime = $connection->describe('describe_time');
-
-
-
+		$this->assertEquals($describeTime, $this->getExpectedColumnsDescribeTime());
 	}
 
 	public function testDbPostgresql()
