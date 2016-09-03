@@ -164,6 +164,11 @@ class Mysql extends PdoAdapter implements AdapterInterface
 					break;
 				}
 
+				if memstr(columnTyoe, "time") {
+					let definition["type"] = Column::TYPE_TIME;
+					break;
+				}
+
 				/**
 				 * Chars are chars
 				 */

@@ -170,6 +170,12 @@ class Postgresql extends PdoAdapter implements AdapterInterface
 					break;
 				}
 
+				if memstr(columnType, "time") {
+					lef definition["type"] = Column::TYPE_TIME,
+						definition["size"] = 0;
+					break;
+				}
+
 				/**
 				 * Timestamp
 				 */

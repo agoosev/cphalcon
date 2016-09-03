@@ -538,6 +538,43 @@ class DbDescribeTest extends PHPUnit_Framework_TestCase
 		);
 	}
 
+
+	public function getExpectedColumnsDescribeTime()
+	{
+		return array(
+			0 => Phalcon\Db\Column::__set_state(array(
+				'_columnName' => 'id',
+				'_schemaName' => NULL,
+				'_type' => 0,
+				'_isNumeric' => true,
+				'_size' => 11,
+				'_scale' => 0,
+				'_default' => '0',
+				'_unsigned' => false,
+				'_notNull' => true,
+				'_autoIncrement' => true,
+				'_first' => true,
+				'_after' => NULL,
+				'_bindType' => 1,
+			)),
+			1 => Phalcon\Db\Column::__set_state(array(
+				'_columnName' => 'time_field',
+				'_schemaName' => NULL,
+				'_type' => 0,
+				'_isNumeric' => false,
+				'_size' => 0,
+				'_scale' => 0,
+				'_default' => '0',
+				'_unsigned' => false,
+				'_notNull' => false,
+				'_autoIncrement' => false,
+				'_first' => false,
+				'_after' => 'id',
+				'_bindType' => 1,
+			)),
+		);
+	}
+
 	public function testDbMysql()
 	{
 
@@ -644,6 +681,10 @@ class DbDescribeTest extends PHPUnit_Framework_TestCase
 
 		$describeReferences = $connection->describeReferences('robots_parts', 'phalcon_test');
 		$this->assertEquals($describeReferences, $expectedReferences);
+
+		$describeTime = $connection->describe('describe_time');
+
+
 
 	}
 
